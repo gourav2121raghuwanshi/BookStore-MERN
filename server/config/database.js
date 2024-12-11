@@ -4,11 +4,7 @@ dotenv.config();
 
 const dbConnect = () => {
     console.log("in db file");
-    mongoose.connect(process.env.DATABASE_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    
+    mongoose.connect(process.env.DATABASE_URL)
     .then(() => {console.log("DB  is Successfulllll")})
     .catch( (error) => {
         console.log("Issue in DB Connection");
