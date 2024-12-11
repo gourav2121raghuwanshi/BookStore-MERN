@@ -7,14 +7,22 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+// app.use(
+//     cors({
+//     credentials: true,
+//       origin: 'https://book-store-mern-five.vercel.app/',
+//       methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//       allowedHeaders: ['Content-Type'],
+//     })
+//   );
 app.use(
-    cors({
-    credentials: true,
-      origin: 'https://book-store-mern-five.vercel.app/',
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      allowedHeaders: ['Content-Type'],
-    })
-  );
+  cors({
+    credentials: true, 
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+  })
+);
 
 // app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
