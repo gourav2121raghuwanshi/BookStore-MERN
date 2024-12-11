@@ -18,7 +18,7 @@ const EditBook = () => {
 
   useEffect(()=>{
     setLoading(true)
-    axios.get(`http://localhost:4000/books/${id}`)
+    axios.get(`https://book-store-mern-du8v.vercel.app/books/${id}`)
     .then((res)=>{
       setAuthor(res.data.author)
       setPublishYear(res.data.publishYear)
@@ -40,7 +40,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:4000/books/${id}`, data)
+      .put(`https://book-store-mern-du8v.vercel.app/${id}`, data)
       .then(() => {
         setLoading(false);
         navigate('/')
